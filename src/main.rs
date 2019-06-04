@@ -28,11 +28,11 @@ fn main() {
     easy.url(url.trim()).unwrap();
     easy.progress(true).unwrap();
 
-    // easy.progress_function(|dltotal, dlnow, _, _| {
-    //     print!("Progress : {}%\r", ((dlnow / dltotal) * 100.0) as u32);
-    //     return true;
-    // })
-    // .unwrap();
+    easy.progress_function(|dltotal, dlnow, _, _| {
+        print!("Progress : {}%\r", ((dlnow / dltotal) * 100.0) as u32);
+        return true;
+    })
+    .unwrap();
 
     File::create(&name).unwrap();
 
